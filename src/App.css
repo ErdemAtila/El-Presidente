@@ -1,61 +1,177 @@
+/* styles.css */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.game-board {
+  height: 100vh;
+  background-color: cadetblue;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+  box-sizing: border-box;
+  gap:50px
+}
+
+.game-board header, .game-board footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.game-board header {
+  align-items:flex-start;
+
+}
+
+header .settings, header .book {
+  font-size: 32px;
+  display: inline;
+}
+
+header .settings svg {
+  padding: 3px;
+  border: 3px solid white;
+}
+
+header .dialog {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+header .dialog img {
+  max-width: 60px;
+}
+
+header .dialog > div {
+  font-size: 22px;
+  max-width: 80%;
+  background-color: #9F988A;
+  padding: 5px 10px;
+  border-radius: 10px;
+  color: #08473D;
+  font-weight: bold;
+}
+
+.screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  overflow: hidden; /* İçeriğin taşmasını önlemek için */
+}
+
+.screen img {
+  width: auto;
+  height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
 .hatred {
-  width: 300px; /* Adjust the width as needed */
-  height: 50px; /* Adjust the height as needed */
-  background-color: #ccc; /* Adjust the background color as needed */
+  height: 80px;
+  background-color: #3F4D4A;
+  width: 40%;
+  background-color: #ccc;
   clip-path: polygon(
-      0% 40%, /* Top-left cut */
-      6% 0%,  /* Top-left point */
-      94% 0%, /* Top-right point */
-      100% 40%, /* Top-right cut */
-      100% 100%, /* Bottom-right */
-      0% 100%  /* Bottom-left */
+    0% 40%,
+    6% 0%,
+    94% 0%,
+    100% 40%,
+    100% 100%,
+    0% 100%
   );
 }
 
 .screen-info {
-  width: 150px; /* Adjust the width as needed */
-  height: 50px; /* Adjust the height as needed */
-  background-color: #ccc; /* Adjust the background color as needed */
+  max-width: 20%;
+  height: 80px;
+  background-color: #3F4D4A;
+  display: flex;
+  align-items: center;
   clip-path: polygon(
-      0% 0%, /* Top-left cut */
-      10% 0%,  /* Top-left point */
-      90% 0%, /* Top-right point */
-      100% 40%, /* Top-right cut */
-      100% 100%, /* Bottom-right */
-      0% 100%  /* Bottom-left */
+    0% 0%,
+    10% 0%,
+    90% 0%,
+    100% 40%,
+    100% 100%,
+    0% 100%
   );
+  gap: 10px;
+  padding-right: 20px;
+  padding-left: 5px;
+  box-sizing: border-box;
+  border-top: 4px solid #EFE7B8;
 }
+
+.screen-info .level {
+  width: 60px;  /* Altıgenin genişliği */
+  height: 60px; /* Altıgenin yüksekliği */
+  background-color:#EFE7B8; /* Altıgenin arka plan rengi */
+  clip-path: polygon(
+      50% 0%,   /* Üst orta */
+      100% 25%, /* Sağ üst köşe */
+      100% 75%, /* Sağ alt köşe */
+      50% 100%, /* Alt orta */
+      0% 75%,   /* Sol alt köşe */
+      0% 25%    /* Sol üst köşe */
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.screen-info .level span {
+  color: #08473D;
+  font-size: 32px;
+  font-weight: bolder;
+}
+.screen-info .info {
+  font-weight: bolder;
+  color: #EFE7B8;
+}
+
 
 .actions {
   display: flex;
+  width: 240px;
   gap: 2px;
-  
 }
 
 .actions > div {
-  border-top: 1px solid yellow;
-    width: 50px; /* Adjust the width as needed */
-    height: 50px; /* Adjust the height as needed */
-    background-color: #ccc; /* Adjust the background color as needed */
+  box-sizing: border-box;
+  border-top: 4px solid #08473D;
+  height: 80px;
+  background-color: #3F4D4A;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #EFE7B8;
+
 }
-.actions > div:first-of-type {
-    clip-path: polygon(
-        0% 40%, /* Top-left cut */
-        25% 0%,  /* Top-left point */
-        100% 0%, /* Top-right point */
-        100% 40%, /* Top-right cut */
-        100% 100%, /* Bottom-right */
-        0% 100%  /* Bottom-left */
-    );
+.actions > div img {
+  width: 70%;
 }
 
+.actions > div:first-of-type {
+  clip-path: polygon(
+    0% 40%,
+    25% 0%,
+    100% 0%,
+    100% 40%,
+    100% 100%,
+    0% 100%
+  );
+}
 
 .give-money {
   border-top: 5px solid #DED0B2;
   border-radius: 10px;
   display: inline;
   padding: 10px 15px;
-  background-color:#08473D;
+  background-color: #08473D;
   text-align: center;
   color: #DED0B2;
   line-height: 50px;
@@ -63,9 +179,10 @@
   font-weight: bold;
   transition: color 0.3s, background-color 0.3s, border-top-color 0.3s;
 }
+
 .give-money:hover {
   color: #08473D;
   background-color: #DED0B2;
-  border-top-color:#08473D ;
+  border-top-color: #08473D;
   cursor: pointer;
 }
