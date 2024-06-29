@@ -1,0 +1,71 @@
+.hatred {
+  width: 300px; /* Adjust the width as needed */
+  height: 50px; /* Adjust the height as needed */
+  background-color: #ccc; /* Adjust the background color as needed */
+  clip-path: polygon(
+      0% 40%, /* Top-left cut */
+      6% 0%,  /* Top-left point */
+      94% 0%, /* Top-right point */
+      100% 40%, /* Top-right cut */
+      100% 100%, /* Bottom-right */
+      0% 100%  /* Bottom-left */
+  );
+}
+
+.screen-info {
+  width: 150px; /* Adjust the width as needed */
+  height: 50px; /* Adjust the height as needed */
+  background-color: #ccc; /* Adjust the background color as needed */
+  clip-path: polygon(
+      0% 0%, /* Top-left cut */
+      10% 0%,  /* Top-left point */
+      90% 0%, /* Top-right point */
+      100% 40%, /* Top-right cut */
+      100% 100%, /* Bottom-right */
+      0% 100%  /* Bottom-left */
+  );
+}
+
+.actions {
+  display: flex;
+  gap: 2px;
+  
+}
+
+.actions > div {
+  border-top: 1px solid yellow;
+    width: 50px; /* Adjust the width as needed */
+    height: 50px; /* Adjust the height as needed */
+    background-color: #ccc; /* Adjust the background color as needed */
+}
+.actions > div:first-of-type {
+    clip-path: polygon(
+        0% 40%, /* Top-left cut */
+        25% 0%,  /* Top-left point */
+        100% 0%, /* Top-right point */
+        100% 40%, /* Top-right cut */
+        100% 100%, /* Bottom-right */
+        0% 100%  /* Bottom-left */
+    );
+}
+
+
+.give-money {
+  border-top: 5px solid #DED0B2;
+  border-radius: 10px;
+  display: inline;
+  padding: 10px 15px;
+  background-color:#08473D;
+  text-align: center;
+  color: #DED0B2;
+  line-height: 50px;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: color 0.3s, background-color 0.3s, border-top-color 0.3s;
+}
+.give-money:hover {
+  color: #08473D;
+  background-color: #DED0B2;
+  border-top-color:#08473D ;
+  cursor: pointer;
+}
